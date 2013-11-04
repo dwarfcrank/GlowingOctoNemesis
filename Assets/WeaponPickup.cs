@@ -34,7 +34,12 @@ public class WeaponPickup : Pickup {
         }
 
         weapslot.SetWeapon(weapon);
-
+		
+		var inv = GameObject.FindGameObjectWithTag("WeaponInventory");
+		var wInv = inv.GetComponent<WeaponInventory>();
+		if(wInv == null) return;
+		wInv.addWeaponToInv(0);
+		
         /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
 
