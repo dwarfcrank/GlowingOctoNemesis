@@ -39,7 +39,7 @@ public class WeaponPickup : Pickup {
 		var inv = GameObject.FindGameObjectWithTag("WeaponInventory");
 		var wInv = inv.GetComponent<WeaponInventory>();
 		if(wInv == null) return;
-		wInv.addWeaponToInv(WeaponInventory.WeaponType.RIFLE);
+		wInv.addWeaponToInv((int)WeaponInventory.WeaponType.RIFLE, weapon);
 				
         /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
