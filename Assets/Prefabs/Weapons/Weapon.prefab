@@ -181,7 +181,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Priority: 128
   DopplerLevel: 1
@@ -344,6 +344,7 @@ MonoBehaviour:
   forcePerSecond: 20
   hitSoundVolume: .25
   muzzleFlashFront: {fileID: 100006}
+  muzzleFlashTime: .300000012
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
