@@ -12,6 +12,7 @@ var forcePerSecond : float = 20.0;
 var hitSoundVolume : float = 0.5;
 
 var muzzleFlashFront : GameObject;
+var muzzleFlashTime : float = 0.3;
 
 private var lastFireTime : float = -1;
 private var raycast : PerFrameRaycast;
@@ -25,11 +26,19 @@ function Awake () {
 }
 
 function Update () {
+    if (Time.time > lastFireTime + muzzleFlashTime)
+    {
+        muzzleFlashFront.SetActive(false);
+    }
+
     if (firing) {
 
         if (Time.time > lastFireTime + 1 / frequency) {
             if (audio)
                 audio.Play ();
+            
+            muzzleFlashFront.SetActive(true);
+
             // Spawn visual bullet
             var coneRandomRotation = Quaternion.Euler (Random.Range (-coneAngle, coneAngle), Random.Range (-coneAngle, coneAngle), 0);
             var go : GameObject = Spawner.Spawn (bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
@@ -84,6 +93,6 @@ function OnStopFire () {
 
     muzzleFlashFront.SetActive (false);
 
-//    if (audio)
-//        audio.Stop ();
+    //    if (audio)
+    //        audio.Stop ();
 }
