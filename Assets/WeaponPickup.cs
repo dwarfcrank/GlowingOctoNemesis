@@ -21,12 +21,21 @@ public class WeaponPickup : Pickup {
     {
         var slot = GameObject.FindGameObjectWithTag("WeaponSlot");
 
-        if (!slot.transform.IsChildOf(player.transform) || slot.transform.GetChildCount() == 0)
+        if (!slot.transform.IsChildOf(player.transform) || slot.transform.childCount == 0)
         {
             return;
         }
 
-        var weap = slot.transform.GetChild(0);
+        var weapslot = slot.GetComponent<WeaponSlot>();
+
+        if (weapslot == null)
+        {
+            return;
+        }
+
+        weapslot.SetWeapon(weapon);
+
+        /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
 
         if (fire == null)
@@ -35,5 +44,6 @@ public class WeaponPickup : Pickup {
         }
 
         fire.frequency *= 2;
+        fire.coneAngle *= 5;*/
     }
 }
