@@ -92,7 +92,7 @@ function OnDamage (amount : float, fromDirection : Vector3) {
 	// Die if no health left
 	if (health <= 0)
 	{
-		GameScore.RegisterDeath (gameObject);
+		//GameScore.RegisterDeath (gameObject);
 
 		health = 0;
 		dead = true;
