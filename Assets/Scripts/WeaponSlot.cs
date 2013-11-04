@@ -18,8 +18,8 @@ public class WeaponSlot : MonoBehaviour {
         var trigger = weapon.GetComponent<TriggerOnMouseOrJoystick>();
         var player = GameObject.FindGameObjectWithTag("PlayerAnim");
 
-        trigger.mouseUpSignals.receivers[1]   = new ReceiverItem() { receiver = player, action = "OnStartFire" };
-        trigger.mouseDownSignals.receivers[1] = new ReceiverItem() { receiver = player, action = "OnStopFire" };
+        trigger.mouseDownSignals.receivers[1]   = new ReceiverItem() { receiver = player, action = "OnStartFire" };
+        trigger.mouseUpSignals.receivers[1] = new ReceiverItem() { receiver = player, action = "OnStopFire" };
     }
 
     void Update()

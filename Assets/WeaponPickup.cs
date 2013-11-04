@@ -16,4 +16,24 @@ public class WeaponPickup : Pickup {
     {
         base.Update();
     }
+
+    public override void ApplyEffect(GameObject player)
+    {
+        var slot = GameObject.FindGameObjectWithTag("WeaponSlot");
+
+        if (!slot.transform.IsChildOf(player.transform) || slot.transform.GetChildCount() == 0)
+        {
+            return;
+        }
+
+        var weap = slot.transform.GetChild(0);
+        var fire = weap.GetComponent<AutoFire>();
+
+        if (fire == null)
+        {
+            return;
+        }
+
+        fire.frequency *= 2;
+    }
 }

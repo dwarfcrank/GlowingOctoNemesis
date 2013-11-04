@@ -16,9 +16,23 @@ public class Pickup : MonoBehaviour {
     protected virtual void Update()
     {
         transform.Rotate(new Vector3(0.0f, 0.0f, 2.0f));
-        transform.Translate(new Vector3(0.0f, 0.0f, Mathf.Sin(rotation * 4.0f) * 0.01f));
+
+        var offset = new Vector3(0.0f, 0.0f, Mathf.Sin(rotation * 4.0f) * 0.01f);
+        transform.Translate(offset);
 
         rotation += Time.deltaTime;
+    }
+
+    protected void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        ApplyEffect(other.gameObject);
+
+        Destroy(gameObject);
     }
 
     public virtual void ApplyEffect(GameObject player)

@@ -13,12 +13,4 @@ public class CollisionHandler : MonoBehaviour {
     
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        var pickup = other.gameObject.GetComponent<Pickup>();
-
-        pickup.ApplyEffect(gameObject);
-
-        Destroy(other.gameObject);
-    }
 }
