@@ -925,6 +925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 100006, guid: f487e48a34f8f044aa721a110792c3d6, type: 2}
+  WeaponNumber: 1
 --- !u!23 &618765500
 Renderer:
   m_ObjectHideFlags: 0
@@ -1934,6 +1935,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4bb6985b769a24f900fb6e577f2242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1539668948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2617,6 +2624,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac4bb6985b769a24f900fb6e577f2242, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
 --- !u!1 &1975367663
 GameObject:
