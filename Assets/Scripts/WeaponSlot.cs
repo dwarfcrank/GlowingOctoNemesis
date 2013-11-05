@@ -58,19 +58,11 @@ public class WeaponSlot : MonoBehaviour {
 	
 	public void addWeaponToInv(int weapon, GameObject WeaponPrefab)
 	{
-		//inventory[weapon] = true;
 		weaps[weapon] = WeaponPrefab;
 	}
 	
 	public bool weaponUnlocked(int weapon)
 	{
-		/*
-		if(inventory[weapon]){
-			return true;
-		}
-		return false;
-		*/
-		
 		if(weaps[weapon] == null){
 			return false;
 		}
