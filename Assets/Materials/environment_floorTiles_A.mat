@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: environment_floorTiles_A
-  m_Shader: {fileID: 4800000, guid: d3fe6e8745b794a77bfeb9a10c0fdddb, type: 3}
+  m_Shader: {fileID: 4800000, guid: fe89f05264abe4e45b419314979a5c2c, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -63,6 +63,10 @@ Material:
         first:
           name: _EmissionLM
         second: 0
+      data:
+        first:
+          name: _OneMinusReflectivity
+        second: .0500000007
       data:
         first:
           name: _Threshhold

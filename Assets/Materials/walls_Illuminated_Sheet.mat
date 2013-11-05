@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walls_Illuminated_Sheet
-  m_Shader: {fileID: 4800000, guid: 9666b39207d043b4d985cd75461b5776, type: 3}
+  m_Shader: {fileID: 4800000, guid: fe89f05264abe4e45b419314979a5c2c, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -58,6 +58,10 @@ Material:
         second: 3.29999995
       data:
         first:
+          name: _OneMinusReflectivity
+        second: .0500000007
+      data:
+        first:
           name: _SelfIllumination
         second: 1
     m_Colors:
@@ -69,6 +73,10 @@ Material:
         first:
           name: _SpecColor
         second: {r: .678286433, g: .678393066, b: .67824775, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
