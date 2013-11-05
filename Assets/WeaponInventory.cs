@@ -10,77 +10,81 @@ public class WeaponInventory : MonoBehaviour {
 		ROCKET_LAUNCHER
 	}
 	
-	bool[] inventory;
+	//bool[] inventory;
 	GameObject[] weaps;
 	
 	// Use this for initialization
 	void Start () {
 		Debug.Log ("startattud");
-		inventory = new bool[Enum.GetNames(typeof(WeaponType)).Length];
-		inventory[(int)WeaponType.RIFLE] = true;
+		//inventory = new bool[Enum.GetNames(typeof(WeaponType)).Length];
+		//inventory[(int)WeaponType.RIFLE] = true;
 		weaps = new GameObject[Enum.GetNames(typeof(WeaponType)).Length];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+		if (Input.GetKeyDown("1")) 
+		{
+    		switchWeapon((int)WeaponType.RIFLE);
+		}
+
+		else if (Input.GetKeyDown("2")) 
+		{
+    		switchWeapon((int)WeaponType.ROCKET_LAUNCHER);
+		}
+		
 	}
 	
 	public void addWeaponToInv(int weapon, GameObject WeaponPrefab){
-		inventory[weapon] = true;
-		Debug.Log ("lisäys doned, weapon nro: " + weapon);
+		//inventory[weapon] = true;
 		weaps[weapon] = WeaponPrefab;
+		Debug.Log ("lisäys doned, weapon nro: " + weapon);
 		Debug.Log ("prefab: " + weaps[weapon].name);
+		
 	}
 	
 	public bool weaponUnlocked(int weapon){
+		/*
 		if(inventory[weapon]){
 			return true;
 		}
 		return false;
+		*/
+		
+		if(weaps[weapon] == null){
+			return false;
+		}
+		return true;
 	}
 
-	/*
 	public void switchWeapon(int weapon){
+		Debug.Log ("koitetaan vaihtaa");
 		if(!weaponUnlocked(weapon)){
+			Debug.Log ("nope :(");
 			return;
 		}
-		
-		
+		Debug.Log ("yep :D");
 		var slot = GameObject.FindGameObjectWithTag("WeaponSlot");
-
+				
+		/*
         if (!slot.transform.IsChildOf(player.transform) || slot.transform.childCount == 0)
         {
             return;
         }
-
+		*/ 
+		 
         var weapslot = slot.GetComponent<WeaponSlot>();
 
         if (weapslot == null)
         {
+			Debug.Log ("weapslot null :(");
             return;
         }
-
-        weapslot.SetWeapon(weapon);
+		
+		Debug.Log ("vaihdetaan pyssy :D");
+        weapslot.SetWeapon(weaps[weapon]);
 	}
-	
-	
-	public void SetWeapon(GameObject WeaponPrefab)
-    {
-        if (currentWeapon != null)
-        {
-            Destroy(currentWeapon);
-        }
 
-        currentWeapon = (GameObject)Instantiate(WeaponPrefab, transform.position, transform.rotation);
-        currentWeapon.transform.parent = transform;
-
-        var trigger = currentWeapon.GetComponent<TriggerOnMouseOrJoystick>();
-        var player = GameObject.FindGameObjectWithTag("PlayerAnim");
-
-        trigger.mouseDownSignals.receivers[1]   = new ReceiverItem() { receiver = player, action = "OnStartFire" };
-        trigger.mouseUpSignals.receivers[1] = new ReceiverItem() { receiver = player, action = "OnStopFire" };
-    }
-	*/
 	
 }

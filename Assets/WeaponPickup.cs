@@ -36,11 +36,13 @@ public class WeaponPickup : Pickup {
         weapslot.SetWeapon(weapon);
 		
 		//inventory lisäyksen testailua
-		var inv = GameObject.FindGameObjectWithTag("WeaponInventory");
-		var wInv = inv.GetComponent<WeaponInventory>();
-		if(wInv == null) return;
-		wInv.addWeaponToInv((int)WeaponInventory.WeaponType.RIFLE, weapon);
-				
+		//var inv = GameObject.FindGameObjectWithTag("WeaponInventory");
+		//var wInv = inv.GetComponent<WeaponInventory>();
+		//if(wInv == null) return;
+		
+		//wInv.addWeaponToInv((int)WeaponInventory.WeaponType.RIFLE, weapon);
+
+		weapslot.addWeaponToInv((int)WeaponInventory.WeaponType.ROCKET_LAUNCHER, weapon);
         /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
 
