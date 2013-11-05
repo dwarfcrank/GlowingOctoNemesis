@@ -28,8 +28,7 @@ public class WeaponSlot : MonoBehaviour {
     {
         if (currentWeapon != null)
         {
-			currentWeapon.SetActive(false);
-            //Destroy(currentWeapon);
+            Destroy(currentWeapon);
         }
 
         currentWeapon = (GameObject)Instantiate(WeaponPrefab, transform.position, transform.rotation);
@@ -91,7 +90,6 @@ public class WeaponSlot : MonoBehaviour {
         }
 		
         weapslot.SetWeapon(weaps[weapon]);
-		weaps[weapon].SetActive(true);
 	}
 	
 }
