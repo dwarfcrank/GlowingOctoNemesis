@@ -56,15 +56,14 @@ public class WeaponSlot : MonoBehaviour {
 		
     }
 	
-	public void addWeaponToInv(int weapon, GameObject WeaponPrefab){
+	public void addWeaponToInv(int weapon, GameObject WeaponPrefab)
+	{
 		//inventory[weapon] = true;
 		weaps[weapon] = WeaponPrefab;
-		Debug.Log ("lisäys doned, weapon nro: " + weapon);
-		Debug.Log ("prefab: " + weaps[weapon].name);
-		
 	}
 	
-	public bool weaponUnlocked(int weapon){
+	public bool weaponUnlocked(int weapon)
+	{
 		/*
 		if(inventory[weapon]){
 			return true;
@@ -78,13 +77,12 @@ public class WeaponSlot : MonoBehaviour {
 		return true;
 	}
 
-	public void switchWeapon(int weapon){
-		Debug.Log ("koitetaan vaihtaa");
-		if(!weaponUnlocked(weapon)){
-			Debug.Log ("nope :(");
+	public void switchWeapon(int weapon)
+	{
+		if(!weaponUnlocked(weapon))
+		{
 			return;
 		}
-		Debug.Log ("yep :D");
 		var slot = GameObject.FindGameObjectWithTag("WeaponSlot");
 				
 		var player = GameObject.FindGameObjectWithTag("PlayerAnim");
@@ -93,17 +91,13 @@ public class WeaponSlot : MonoBehaviour {
             return;
         }
 		 
-		 
         var weapslot = slot.GetComponent<WeaponSlot>();
 
         if (weapslot == null)
         {
-			Debug.Log ("weapslot null :(");
             return;
         }
 		
-		Debug.Log ("vaihdetaan pyssy :D");
-		Debug.Log (weaps[weapon]);
         weapslot.SetWeapon(weaps[weapon]);
 		weaps[weapon].SetActive(true);
 	}

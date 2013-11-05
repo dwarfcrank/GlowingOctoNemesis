@@ -45,7 +45,7 @@ public class WeaponPickup : Pickup {
 		/*
 		 * HUOM KOVAKOODATTU ASEEN ENUM ARVO
 		 */
-		weapslot.addWeaponToInv((int)WeaponInventory.WeaponType.ROCKET_LAUNCHER, weapon);
+		weapslot.addWeaponToInv((int)WeaponSlot.WeaponType.ROCKET_LAUNCHER, weapon);
         /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
 
