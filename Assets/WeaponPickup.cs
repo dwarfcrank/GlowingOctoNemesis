@@ -4,6 +4,7 @@ using System.Collections;
 public class WeaponPickup : Pickup {
 
     public GameObject weapon;
+	public WeaponSlot.WeaponType WeaponNumber;
 
     // Use this for initialization
     protected override void Start()
@@ -34,18 +35,8 @@ public class WeaponPickup : Pickup {
         }
 
         weapslot.SetWeapon(weapon);
+		weapslot.addWeaponToInv((int)WeaponNumber, weapon);
 		
-		//inventory lisäyksen testailua
-		//var inv = GameObject.FindGameObjectWithTag("WeaponInventory");
-		//var wInv = inv.GetComponent<WeaponInventory>();
-		//if(wInv == null) return;
-		
-		//wInv.addWeaponToInv((int)WeaponInventory.WeaponType.RIFLE, weapon);
-		
-		/*
-		 * HUOM KOVAKOODATTU ASEEN ENUM ARVO
-		 */
-		weapslot.addWeaponToInv((int)WeaponSlot.WeaponType.ROCKET_LAUNCHER, weapon);
         /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
 
