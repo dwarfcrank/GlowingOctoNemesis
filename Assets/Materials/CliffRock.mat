@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: CliffRock
-  m_Shader: {fileID: 4800000, guid: fe89f05264abe4e45b419314979a5c2c, type: 3}
+  m_Shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -21,10 +21,10 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Normal
+          name: _BumpMap
         second:
           m_Texture: {fileID: 2800000, guid: 2cbc74770d30d45ccbb691e95fa7a238, type: 3}
-          m_Scale: {x: 1.5, y: 1.5}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -33,12 +33,38 @@ Material:
           m_Texture: {fileID: 8900000, guid: 76d44c8a1c8f74611a38a4715f33deb7, type: 2}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 2cbc74770d30d45ccbb691e95fa7a238, type: 3}
+          m_Scale: {x: 1.5, y: 1.5}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .078125
+      data:
+        first:
+          name: _EmissionLM
+        second: 0
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

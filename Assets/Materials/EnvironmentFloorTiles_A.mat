@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: EnvironmentFloorTiles_A
-  m_Shader: {fileID: 4800000, guid: fe89f05264abe4e45b419314979a5c2c, type: 3}
+  m_Shader: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -21,7 +21,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Normal
+          name: _BumpMap
         second:
           m_Texture: {fileID: 2800000, guid: 4a656ea2eee26456dbbbf475ba73f542, type: 3}
           m_Scale: {x: 1, y: 1}
@@ -40,7 +40,18 @@ Material:
           m_Texture: {fileID: 2800000, guid: f118120a67e7e4f588d865a4ec2ad6b4, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 4a656ea2eee26456dbbbf475ba73f542, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .078125
       data:
         first:
           name: _EmissionLM
@@ -54,6 +65,10 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
