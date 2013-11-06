@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01627f15ad6216f49b8fd1b036539ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 100006, guid: f487e48a34f8f044aa721a110792c3d6, type: 2}
+  weapon: {fileID: 100000, guid: 4f6a4328f55873b4bb298ef8f138630b, type: 2}
   WeaponNumber: 1
 --- !u!135 &13500000
 SphereCollider:

@@ -424,6 +424,22 @@ GameObject:
 --- !u!1002 &100041
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!1 &100042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400042}
+  - 114: {fileID: 11400026}
+  m_Layer: 0
+  m_Name: SpawnPickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -431,7 +447,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: -.876062691, z: 0, w: -.482197195}
-  m_LocalPosition: {x: 12.0584211, y: -.00423926115, z: 15.679903}
+  m_LocalPosition: {x: -4.74434662, y: -1.18600464, z: 3.10341144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400022}
@@ -444,6 +460,7 @@ Transform:
   - {fileID: 400038}
   - {fileID: 400008}
   - {fileID: 400034}
+  - {fileID: 400042}
   m_Father: {fileID: 0}
 --- !u!1002 &400001
 EditorExtensionImpl:
@@ -738,6 +755,17 @@ Transform:
 --- !u!1002 &400041
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!4 &400042
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100042}
+  m_LocalRotation: {x: 0, y: .876062691, z: -0, w: -.482197195}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -1532,6 +1560,9 @@ MonoBehaviour:
     - receiver: {fileID: 100022}
       action: OnSignal
       delay: 0
+    - receiver: {fileID: 100042}
+      action: OnDeath
+      delay: 0
 --- !u!1002 &11400009
 EditorExtensionImpl:
   serializedVersion: 6
@@ -1680,6 +1711,22 @@ MonoBehaviour:
 --- !u!1002 &11400025
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b48a68d0a0a0240aa73dedb4a9fbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 100002, guid: f9de32200f67a264097bdc0df713126a, type: 2}
+  - {fileID: 100002, guid: d384835283270934685ff0b22f61e032, type: 2}
+  - {fileID: 100000, guid: 0c7864a5df5c7e5489480611f6b8e004, type: 2}
+  numberOfPickups: 3
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
