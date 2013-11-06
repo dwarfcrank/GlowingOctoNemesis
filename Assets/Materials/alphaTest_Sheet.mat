@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: alphaTest_Sheet
-  m_Shader: {fileID: 4800000, guid: 471c29ea38cab47cd975a3243a165a16, type: 3}
+  m_Shader: {fileID: 33, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -28,16 +28,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Normal
+          name: _Cube
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 8900000, guid: 1d024bf93a7be4b77a30817bea2b4579, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _Normal
         second:
-          m_Texture: {fileID: 8900000, guid: 1d024bf93a7be4b77a30817bea2b4579, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
