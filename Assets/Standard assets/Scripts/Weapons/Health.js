@@ -44,6 +44,20 @@ function Awake () {
 	}
 }
 
+function addHealth(amount : float){
+	if (dead)
+		return;
+	if (amount <= 0)
+		return;
+
+	if(amount+health > maxHealth){
+		health = maxHealth;
+	}else{
+		health += amount;	
+	}
+	
+}
+
 function OnDamage (amount : float, fromDirection : Vector3) {
 	// Take no damage if invincible, dead, or if the damage is zero
 	if(invincible)
