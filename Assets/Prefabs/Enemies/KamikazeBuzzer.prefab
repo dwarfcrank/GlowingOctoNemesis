@@ -127,6 +127,22 @@ GameObject:
 --- !u!1002 &100011
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!1 &100012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400012}
+  - 114: {fileID: 11400010}
+  m_Layer: 0
+  m_Name: SpawnPickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -140,6 +156,7 @@ Transform:
   - {fileID: 400002}
   - {fileID: 400008}
   - {fileID: 400006}
+  - {fileID: 400012}
   m_Father: {fileID: 0}
 --- !u!1002 &400001
 EditorExtensionImpl:
@@ -216,6 +233,17 @@ Transform:
 --- !u!1002 &400011
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!4 &400012
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_LocalRotation: {x: 0, y: -4.17232457e-07, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400000}
 --- !u!12 &1200000
 ParticleAnimator:
   m_ObjectHideFlags: 1
@@ -577,6 +605,9 @@ MonoBehaviour:
     - receiver: {fileID: 100008}
       action: OnSignal
       delay: 0
+    - receiver: {fileID: 100012}
+      action: OnEnemyDeath
+      delay: 0
 --- !u!1002 &11400005
 EditorExtensionImpl:
   serializedVersion: 6
@@ -616,6 +647,22 @@ MonoBehaviour:
 --- !u!1002 &11400009
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b48a68d0a0a0240aa73dedb4a9fbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 100002, guid: f9de32200f67a264097bdc0df713126a, type: 2}
+  - {fileID: 100002, guid: d384835283270934685ff0b22f61e032, type: 2}
+  - {fileID: 100000, guid: 0c7864a5df5c7e5489480611f6b8e004, type: 2}
+  numberOfPickups: 3
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
