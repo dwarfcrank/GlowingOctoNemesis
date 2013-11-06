@@ -37,9 +37,10 @@ public class GuiTest : MonoBehaviour {
         //This should probably be in Start() ?
         //Anyway find a way to get a grip of the GameEnv class and it's functions.
 		//gameEnv = GetComponent<GameEnv>();
-
+		//Debug.Log (gameEnv == null);
 		wave = gameEnv.GetCurrentWave().ToString();
 		kills = gameEnv.GetKills().ToString();
+		//Debug.Log (kills);
 	}
     /*
 	private void findGameEnvStuff()
@@ -82,10 +83,11 @@ public class GuiTest : MonoBehaviour {
 
 		GUI.Label(new Rect(healthXoffset, healthYoffset - 35, 50, 30), "Wave", "box");
 		GUI.Label(new Rect(healthXoffset, healthYoffset - 70, 50, 30), "Kills", "box");
-
-		GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), wave, "box");
 		
-		//GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), gameEnv.GetKills().ToString(), "box");
+		GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), wave, "box");
+		//GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), kills, "box");
+		
+		GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 75, 50, 30), kills, "box");
 	}
 
 	/*
