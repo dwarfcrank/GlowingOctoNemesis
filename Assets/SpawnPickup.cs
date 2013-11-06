@@ -13,14 +13,14 @@ public class SpawnPickup : MonoBehaviour {
 	void Update () {
 	}
 	
-	void OnDeath(){
-		if(Random.Range (1,100)<30)
-		{
+	void OnEnemyDeath(){
+		//if(Random.Range (1,100)<30)
+		//{
 			transform.DetachChildren();
 			int pickup = Random.Range(0,numberOfPickups);
 			Vector3 pos = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
 			Quaternion rot = new Quaternion(0,90,90,0);
 			Instantiate(pickups[pickup], pos, rot);
-		}
+		//}
 	}
 }

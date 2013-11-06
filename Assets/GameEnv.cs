@@ -45,22 +45,22 @@ public class GameEnv : MonoBehaviour {
         var health = enemy.GetComponent<Health>();
 
         var origReceivers = health.dieSignals.receivers;
-        var receivers = new ReceiverItem[origReceivers.Length];
-
+        var receivers = new ReceiverItem[origReceivers.Length+1];
+		
         for (int i = 0; i < origReceivers.Length; i++)
         {
             receivers[i] = origReceivers[i];
         }
-
-        receivers[receivers.Length - 1] = new ReceiverItem
+		
+        receivers[receivers.Length-1] = new ReceiverItem
         {
             action = "OnEnemyDeath",
             receiver = gameObject
         };
-
+		
         health.dieSignals.receivers = receivers;
-
-        enemy.SetActive(true);
+		
+		enemy.SetActive(true);
         Physics.IgnoreCollision(spawnCollider, enemyCollider);
         enemy.BroadcastMessage("OnSpotted");
 

@@ -1561,7 +1561,7 @@ MonoBehaviour:
       action: OnSignal
       delay: 0
     - receiver: {fileID: 100042}
-      action: OnDeath
+      action: OnEnemyDeath
       delay: 0
 --- !u!1002 &11400009
 EditorExtensionImpl:

@@ -2001,7 +2001,7 @@ MonoBehaviour:
       action: OnSignal
       delay: 0
     - receiver: {fileID: 1763760118}
-      action: OnDeath
+      action: OnEnemyDeath
       delay: 0
 --- !u!54 &221554430
 Rigidbody:
@@ -5138,7 +5138,7 @@ MonoBehaviour:
       action: OnSignal
       delay: 0
     - receiver: {fileID: 1802998698}
-      action: OnDeath
+      action: OnEnemyDeath
       delay: 0
 --- !u!54 &821333285
 Rigidbody:
@@ -5636,7 +5636,7 @@ MonoBehaviour:
       action: OnSignal
       delay: 0
     - receiver: {fileID: 1552421694}
-      action: OnDeath
+      action: OnEnemyDeath
       delay: 0
 --- !u!54 &928547100
 Rigidbody:
@@ -6003,7 +6003,7 @@ MonoBehaviour:
       action: OnSignal
       delay: 0
     - receiver: {fileID: 579285610}
-      action: OnDeath
+      action: OnEnemyDeath
       delay: 0
 --- !u!114 &1018775830
 MonoBehaviour:
