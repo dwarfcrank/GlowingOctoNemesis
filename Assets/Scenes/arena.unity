@@ -28605,6 +28605,7 @@ GameObject:
   - 33: {fileID: 1833592223}
   - 23: {fileID: 1833592222}
   - 111: {fileID: 1833592221}
+  - 65: {fileID: 1833592225}
   m_Layer: 0
   m_Name: RespawnChamber
   m_TagString: Untagged
@@ -28668,6 +28669,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!65 &1833592225
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1833592220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4907093, y: 3.57762623, z: 2.3166163}
+  m_Center: {x: -.646634877, y: 1.78865933, z: -.0595886707}
 --- !u!1 &1836908099
 GameObject:
   m_ObjectHideFlags: 0
