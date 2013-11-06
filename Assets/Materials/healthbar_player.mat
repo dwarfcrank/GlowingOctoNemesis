@@ -22,21 +22,21 @@ Material:
     m_Floats:
       data:
         first:
-          name: _SelfIllumination
-        second: 2
-      data:
-        first:
           name: _InvFade
         second: 1
-    m_Colors:
       data:
         first:
-          name: _Color
-        second: {r: 0, g: 1, b: .160839081, a: 1}
+          name: _SelfIllumination
+        second: 1.20000005
+    m_Colors:
       data:
         first:
           name: _TintColor
         second: {r: 1, g: 1, b: 1, a: .501960814}
+      data:
+        first:
+          name: _Color
+        second: {r: 0, g: 1, b: .160839081, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
