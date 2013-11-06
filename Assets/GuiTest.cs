@@ -8,6 +8,9 @@ public class GuiTest : MonoBehaviour {
 	public float healthNow;
 	public float healthMax;
 	public float healthbarLength;
+	public GameObject respawnBehaviour;
+	public RespawnOrDestroy rod;
+	public int deaths;
 	
 	// Use this for initialization
 	void Start () {
@@ -16,11 +19,17 @@ public class GuiTest : MonoBehaviour {
 		healthNow = health.health;
 		healthMax = health.maxHealth;
 		healthbarLength = healthNow/healthMax;
+		respawnBehaviour = GameObject.FindGameObjectWithTag("Respawn");
+		rod = respawnBehaviour.GetComponent<RespawnOrDestroy>();
+		deaths = rod.deaths;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		healthNow = (int)health.health;
+		deaths = rod.deaths;
+		
 		//170 would fill the entire hp bar "box", I've used a smaller value here so things wouldn't overlap.
 		healthbarLength = (healthNow/healthMax)*166;	
 	}
@@ -33,6 +42,8 @@ public class GuiTest : MonoBehaviour {
 		//}
 		
 		//name or sumthin
+		GUI.Label (new Rect (10,10,201,30), "Number of deaths: " + deaths, "box");
+		
 		GUI.Label (new Rect (10,369,201,30), "Das Player", "box");
 			
 		//health
