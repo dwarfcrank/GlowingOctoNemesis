@@ -28,15 +28,19 @@ public class GameEnv : MonoBehaviour {
     void SpawnRandom(Transform location)
     {
         var prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
-        var enemy = Instantiate(prefab, location.position, location.rotation) as GameObject;
+        var pos = location.position;
+
+        if (prefab.name == "KamikazeBuzzer")
+        {
+            pos += new Vector3(0.0f, 0.3f, 0.0f);
+        }
+
+        var enemy = Instantiate(prefab, pos, location.rotation) as GameObject;
+
+        enemy.tag = "Enemy";
+
         var spawnCollider = location.gameObject.collider;
         var enemyCollider = enemy.collider;
-
-        Physics.IgnoreCollision(spawnCollider, enemyCollider);
-        enemy.BroadcastMessage("OnSpotted");
-
-        enemy.SetActive(true);
-        enemy.tag = "Enemy";
 
         var health = enemy.GetComponent<Health>();
 
@@ -55,6 +59,10 @@ public class GameEnv : MonoBehaviour {
         };
 
         health.dieSignals.receivers = receivers;
+
+        enemy.SetActive(true);
+        Physics.IgnoreCollision(spawnCollider, enemyCollider);
+        enemy.BroadcastMessage("OnSpotted");
 
         numCurrentEnemies++;
     }
