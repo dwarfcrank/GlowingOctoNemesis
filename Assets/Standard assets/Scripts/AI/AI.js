@@ -15,6 +15,11 @@ function Awake () {
 	player = GameObject.FindWithTag ("Player").transform;
 }
 
+function Update()
+{
+    Debug.DrawLine(character.position, player.position);
+}
+
 function OnEnable () {
 	behaviourOnLostTrack.enabled = true;
 	behaviourOnSpotted.enabled = false;
