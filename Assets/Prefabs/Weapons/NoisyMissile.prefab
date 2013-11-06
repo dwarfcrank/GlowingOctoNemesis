@@ -128,20 +128,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4b813f7d73f4e5cb3ee6d950d00ebb, type: 3}
+  m_Script: {fileID: 11500000, guid: d6cb6189cd54c9a4c861ed2661d81159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
-  lifeTime: 2.25
+  speed: 15
+  lifeTime: 1.5
   damageAmount: 5
   forceAmount: 5
-  radius: .5
-  seekPrecision: 2
+  radius: 1.5
+  seekPrecision: 1.29999995
   ignoreLayers:
     serializedVersion: 2
-    m_Bits: 65046
-  noise: 10
-  explosionPrefab: {fileID: 100000, guid: bc6bb61901ef740ef9a7bd4148764e88, type: 2}
+    m_Bits: 0
+  noise: 0
+  explosionPrefab: {fileID: 0}
 --- !u!1002 &11400001
 EditorExtensionImpl:
   serializedVersion: 6
