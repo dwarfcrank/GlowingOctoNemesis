@@ -85,6 +85,7 @@ public class GameEnv : MonoBehaviour {
 
     void OnEnemyDeath()
     {
+		kills++;
         numCurrentEnemies--;
     }
 
