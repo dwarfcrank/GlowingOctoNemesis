@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class AmmoPickup : Pickup {
-	
+
+    public int bulletsInPickup = 50;
 	// Use this for initialization
 	protected override void Start()
 	{
@@ -15,9 +16,10 @@ public class AmmoPickup : Pickup {
         base.Update();
     }
 
-	    public override void ApplyEffect(GameObject player)
+	public override void ApplyEffect(GameObject player)
     {
-        //pärpär
+        AmmoQuiver quiver = player.GetComponent<AmmoQuiver>();
+        quiver.bulletCount += bulletsInPickup;
     }
 	
 }

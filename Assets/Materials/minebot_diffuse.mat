@@ -9,6 +9,7 @@ Material:
   m_Name: minebot_diffuse
   m_Shader: {fileID: 4800000, guid: b6adcc18389e141f68abe08051c54567, type: 3}
   m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
