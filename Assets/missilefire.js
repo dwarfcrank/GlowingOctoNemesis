@@ -10,6 +10,7 @@ var firing : boolean = false;
 var damagePerSecond : float = 20.0;
 var forcePerSecond : float = 20.0;
 var hitSoundVolume : float = 0.5;
+var bulletsLeft = 100;
 
 var muzzleFlashFront : GameObject;
 var muzzleFlashTime : float = 0.3;
@@ -17,6 +18,11 @@ var muzzleFlashTime : float = 0.3;
 private var lastFireTime : float = -1;
 private var raycast : PerFrameRaycast;
 
+
+function Start()
+{
+    //quiver = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent("AmmoQuiver");
+}
 function Awake () {
     muzzleFlashFront.SetActive (false);
 
@@ -24,6 +30,8 @@ function Awake () {
     if (spawnPoint == null)
         spawnPoint = transform;
 }
+
+
 
 function Update () {
     if (Time.time > lastFireTime + muzzleFlashTime)
@@ -33,20 +41,24 @@ function Update () {
 
     if (firing) {
 
-        if (Time.time > lastFireTime + 1 / frequency) {
-            if (audio)
-                audio.Play ();
+        if (Time.time > lastFireTime + 1 / frequency)
+        {  
+            //if(quiver.bulletCount > 0)
+            //{
+                if (audio)
+                    audio.Play ();
             
-            muzzleFlashFront.SetActive(true);
+                muzzleFlashFront.SetActive(true);
 
-            // Spawn visual bullet
-            var coneRandomRotation = Quaternion.Euler (Random.Range (-coneAngle, coneAngle), Random.Range (-coneAngle, coneAngle), 0);
-            var go : GameObject = Spawner.Spawn (bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
-            var bullet : SimpleBullet = go.GetComponent.<SimpleBullet> ();
+                // Spawn visual bullet
+                var coneRandomRotation = Quaternion.Euler (Random.Range (-coneAngle, coneAngle), Random.Range (-coneAngle, coneAngle), 0);
+                var go : GameObject = Spawner.Spawn (bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
+                var bullet : SimpleBullet = go.GetComponent.<SimpleBullet> ();
 
-            lastFireTime = Time.time;
+                lastFireTime = Time.time;
 
-            
+                //quiver.bulletCount--;
+            //}
         }
     }
 }

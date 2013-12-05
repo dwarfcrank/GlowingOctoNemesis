@@ -13,6 +13,7 @@ public class GuiTest : MonoBehaviour {
 	private string wave;
 	private string kills;
 	private GameEnv gameEnv;
+    private AmmoQuiver quiver;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,8 @@ public class GuiTest : MonoBehaviour {
         //This and line 39 are the ways you should probably be able to get stuff. gtg lol ebin xD
 		GameObject go = GameObject.FindGameObjectWithTag("GameEnv");
 		gameEnv = go.GetComponent<GameEnv>();
+
+        quiver = GameObject.FindGameObjectWithTag("Player").GetComponent<AmmoQuiver>();
 
 	}
 	
@@ -51,8 +54,14 @@ public class GuiTest : MonoBehaviour {
 		env.GetKills();
 	}
     */
+    private int findAmmoCountForCurrentWeapon()
+    {
+        return quiver.getCurrentWeaponAmmoCount();
+    }
 	void OnGUI () {
-			
+
+        int ammo = findAmmoCountForCurrentWeapon();
+
 		// an example of a button for reference
 		//if (GUI.Button (new Rect (10,10,200,20), "Meet the flashing button")) {
 		//	print ("You clicked me!");
@@ -66,7 +75,8 @@ public class GuiTest : MonoBehaviour {
 		//ammo etc
 		GUI.Label (new Rect (ammoXoffset, ammoYoffset - 30, 201, 30), "weapon", "box");
 		GUI.Label (new Rect(ammoXoffset, ammoYoffset, 50, 30), "AMMO ", "box");
-		GUI.Label (new Rect(ammoXoffset + 50, ammoYoffset, 150, 30), "999" + " / " + "999", "box");
+		GUI.Label (new Rect(ammoXoffset + 50, ammoYoffset, 150, 30), ammo.ToString(), "box");
+        //GUI.Label (new Rect(ammoXoffset + 50, ammoYoffset, 150, 30), "999" + " / " + "999", "box");
 	
 		if (healthNow > 50) {
 			GUI.backgroundColor = Color.green;

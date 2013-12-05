@@ -9,6 +9,7 @@ Material:
   m_Name: GlowPlane
   m_Shader: {fileID: 4800000, guid: bbf40922523a2483584b1c4e6b1132ea, type: 3}
   m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -32,7 +33,7 @@ Material:
       data:
         first:
           name: _TintColor
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: .361210942, g: .335817784, b: .0367082879, a: 1.10620844}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

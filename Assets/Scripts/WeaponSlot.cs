@@ -41,6 +41,11 @@ public class WeaponSlot : MonoBehaviour {
         trigger.mouseUpSignals.receivers[1] = new ReceiverItem() { receiver = player, action = "OnStopFire" };
     }
 
+    public string GetCurrentWeaponName()
+    {
+        return currentWeapon.name; 
+    }
+
     void Update()
     {
 		if (Input.GetKeyDown("1")) 
