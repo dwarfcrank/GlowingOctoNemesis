@@ -19,7 +19,7 @@ public class AmmoPickup : Pickup {
 	public override void ApplyEffect(GameObject player)
     {
         AmmoQuiver quiver = player.GetComponent<AmmoQuiver>();
-        quiver.bulletCount += bulletsInPickup;
+		quiver.AddBulletsToQuiver(bulletsInPickup);
     }
 	
 }

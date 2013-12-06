@@ -45,7 +45,7 @@ public class AutoFire : MonoBehaviour {
             muzzleFlashFront.SetActive(false);
         }
 
-        if (firing && Time.time > lastFireTime + 1 / frequency && quiver.bulletCount > 0)
+        if (firing && Time.time > lastFireTime + 1 / frequency && quiver.GetCurrentWeaponAmmoCount() > 0)
         {
             if (audio)
                 audio.Play();
@@ -59,7 +59,7 @@ public class AutoFire : MonoBehaviour {
 
             lastFireTime = Time.time;
 
-            quiver.bulletCount--;
+			quiver.ShootCurrentWeapon();
 
             // Find the object hit by the raycast
             RaycastHit hitInfo = raycast.GetHitInfo();
@@ -103,7 +103,7 @@ public class AutoFire : MonoBehaviour {
         if (Time.timeScale == 0)
             return;
 
-        if (quiver.bulletCount > 0)
+        if (quiver.GetCurrentWeaponAmmoCount() > 0)
         {
             firing = true;
             muzzleFlashFront.SetActive(true);

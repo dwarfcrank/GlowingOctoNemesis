@@ -49,21 +49,22 @@ public class missilefire : MonoBehaviour {
         {
             if (Time.time > lastFireTime + muzzleFlashTime)
             {
-                if (quiver.bulletCount > 0)
+                if (quiver.GetCurrentWeaponAmmoCount() > 0)
                 {
                     if (audio)
                         audio.Play();
 
                     muzzleFlashFront.SetActive(true);
+
+                    var coneRandomRotation = Quaternion.Euler(Random.Range(-coneAngle, coneAngle), Random.Range(-coneAngle, coneAngle), 0);
+                    GameObject go = Spawner.Spawn(bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
+                    SimpleBullet bullet = go.GetComponent<SimpleBullet>();
+
+                    lastFireTime = Time.time;
+
+					quiver.ShootCurrentWeapon(); ;
                 }
 
-                var coneRandomRotation = Quaternion.Euler(Random.Range(-coneAngle, coneAngle), Random.Range(-coneAngle, coneAngle), 0);
-                GameObject go = Spawner.Spawn(bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
-                SimpleBullet bullet = go.GetComponent<SimpleBullet>();
-
-                lastFireTime = Time.time;
-
-                quiver.bulletCount--;
             }
         }
     }
