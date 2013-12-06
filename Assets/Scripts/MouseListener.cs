@@ -7,13 +7,13 @@ public class MouseListener : MonoBehaviour {
 
 	void OnMouseEnter()
 	{
-		Debug.Log("jeeee hiiri tuli");
+		//Debug.Log("jeeee hiiri tuli");
 		renderer.material.color = Color.green;
 	}
 
 	void OnMouseExit()
 	{
-		Debug.Log("hiiri meni :(");
+		//Debug.Log("hiiri meni :(");
 		renderer.material.color = Color.white;
 	}
 
