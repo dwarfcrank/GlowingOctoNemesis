@@ -45,57 +45,51 @@ public class AutoFire : MonoBehaviour {
             muzzleFlashFront.SetActive(false);
         }
 
-        if (firing)
+        if (firing && Time.time > lastFireTime + 1 / frequency && quiver.bulletCount > 0)
         {
-            if (quiver.bulletCount > 0)
+            if (audio)
+                audio.Play();
+
+            muzzleFlashFront.SetActive(true);
+
+            // Spawn visual bullet
+            var coneRandomRotation = Quaternion.Euler(Random.Range(-coneAngle, coneAngle), Random.Range(-coneAngle, coneAngle), 0);
+            GameObject go = Spawner.Spawn(bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
+            SimpleBullet bullet = go.GetComponent<SimpleBullet>();
+
+            lastFireTime = Time.time;
+
+            quiver.bulletCount--;
+
+            // Find the object hit by the raycast
+            RaycastHit hitInfo = raycast.GetHitInfo();
+            if (hitInfo.transform)
             {
-                if (Time.time > lastFireTime + 1 / frequency)
+                // Get the health component of the target if any
+                Health targetHealth = hitInfo.transform.GetComponent<Health>();
+                if (targetHealth)
                 {
-                    if (audio)
-                        audio.Play();
-
-                    muzzleFlashFront.SetActive(true);
-
-                    // Spawn visual bullet
-                    var coneRandomRotation = Quaternion.Euler(Random.Range(-coneAngle, coneAngle), Random.Range(-coneAngle, coneAngle), 0);
-                    GameObject go = Spawner.Spawn(bulletPrefab, spawnPoint.position, spawnPoint.rotation * coneRandomRotation) as GameObject;
-                    SimpleBullet bullet = go.GetComponent<SimpleBullet>();
-
-                    lastFireTime = Time.time;
-
-                    quiver.bulletCount--;
-
-                    // Find the object hit by the raycast
-                    RaycastHit hitInfo = raycast.GetHitInfo();
-                    if (hitInfo.transform)
-                    {
-                        // Get the health component of the target if any
-                        Health targetHealth = hitInfo.transform.GetComponent<Health>();
-                        if (targetHealth)
-                        {
-                            // Apply damage
-                            targetHealth.OnDamage(damagePerSecond / frequency, -spawnPoint.forward);
-                        }
-
-                        // Get the rigidbody if any
-                        if (hitInfo.rigidbody)
-                        {
-                            // Apply force to the target object at the position of the hit point
-                            Vector3 force = transform.forward * (forcePerSecond / frequency);
-                            hitInfo.rigidbody.AddForceAtPosition(force, hitInfo.point, ForceMode.Impulse);
-                        }
-
-                        // Ricochet sound
-                        AudioClip sound = MaterialImpactManager.GetBulletHitSound(hitInfo.collider.sharedMaterial);
-                        AudioSource.PlayClipAtPoint(sound, hitInfo.point, hitSoundVolume);
-
-                        bullet.dist = hitInfo.distance;
-                    }
-                    else
-                    {
-                        bullet.dist = 1000;
-                    }
+                    // Apply damage
+                    targetHealth.OnDamage(damagePerSecond / frequency, -spawnPoint.forward);
                 }
+
+                // Get the rigidbody if any
+                if (hitInfo.rigidbody)
+                {
+                    // Apply force to the target object at the position of the hit point
+                    Vector3 force = transform.forward * (forcePerSecond / frequency);
+                    hitInfo.rigidbody.AddForceAtPosition(force, hitInfo.point, ForceMode.Impulse);
+                }
+
+                // Ricochet sound
+                AudioClip sound = MaterialImpactManager.GetBulletHitSound(hitInfo.collider.sharedMaterial);
+                AudioSource.PlayClipAtPoint(sound, hitInfo.point, hitSoundVolume);
+
+                bullet.dist = hitInfo.distance;
+            }
+            else
+            {
+                bullet.dist = 1000;
             }
         }
         else
@@ -109,9 +103,11 @@ public class AutoFire : MonoBehaviour {
         if (Time.timeScale == 0)
             return;
 
-        firing = true;
-
-        muzzleFlashFront.SetActive(true);
+        if (quiver.bulletCount > 0)
+        {
+            firing = true;
+            muzzleFlashFront.SetActive(true);
+        }
     }
 
     public void OnStopFire()
