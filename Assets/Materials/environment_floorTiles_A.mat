@@ -9,6 +9,7 @@ Material:
   m_Name: environment_floorTiles_A
   m_Shader: {fileID: 4800000, guid: fe89f05264abe4e45b419314979a5c2c, type: 3}
   m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
