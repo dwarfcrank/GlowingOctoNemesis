@@ -47,6 +47,7 @@ public class GuiTest : MonoBehaviour {
 		kills = gameEnv.GetKills().ToString();
 		//Debug.Log (kills);
 
+		//if user hits escape menu is shown and game is paused
 		if (Input.GetKeyDown("escape")) 
 		{
 			//Console.log("esc");
@@ -87,15 +88,26 @@ public class GuiTest : MonoBehaviour {
 		//Menu
 		var menuLocX = (Screen.width / 2) - 100;
 		var menuLocY = (Screen.height / 2) - 100;
-		//var menuXoffset = 50;
-		//var menuYoffset = 50;
-		//var menuWidth = Screen.width - menuXoffset;
-		//var menuHeight = Screen.height - menuYoffset;
 		if (menuVisible) {
 			GUI.Label(new Rect(menuLocX,menuLocY,200,200), "MENU", "box");
-			GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Continue");
-			GUI.Button(new Rect(menuLocX,menuLocY+100,200,50),"Restart");
-			GUI.Button(new Rect(menuLocX,menuLocY+150,200,50),"Exit");
+			if(GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Continue"))
+			{
+				//Debug.Log("Continue");
+				menuVisible = false;
+				Time.timeScale = 1;
+			}
+			if(GUI.Button(new Rect(menuLocX,menuLocY+100,200,50),"Restart"))
+			{
+				//Debug.Log("Restart");
+				Application.LoadLevel(Application.loadedLevel);
+				menuVisible = false;
+				Time.timeScale = 1;
+			}
+			if(GUI.Button(new Rect(menuLocX,menuLocY+150,200,50),"Exit"))
+			{
+				//Debug.Log("Exit");
+				Application.Quit();
+			}
 		}
 
         var healthXoffset = 10;
