@@ -361,7 +361,7 @@ MonoBehaviour:
   forcePerSecond: 20
   hitSoundVolume: .25
   bulletsLeft: 100
-  muzzleFlashFront: {fileID: 100000, guid: 2ad21cc5b2a724b64ba4c729939d59d9, type: 3}
+  muzzleFlashFront: {fileID: 100006}
   muzzleFlashTime: .300000012
 --- !u!120 &12000000
 LineRenderer:
