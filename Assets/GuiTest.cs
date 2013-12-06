@@ -14,9 +14,11 @@ public class GuiTest : MonoBehaviour {
 	private string kills;
 	private GameEnv gameEnv;
     private AmmoQuiver quiver;
+	private bool menuVisible;
 
 	// Use this for initialization
 	void Start () {
+		menuVisible = false;
 		player = GameObject.FindGameObjectWithTag("Player");
 		health = player.GetComponent<Health>();
 		healthNow = health.health;
@@ -44,6 +46,22 @@ public class GuiTest : MonoBehaviour {
 		wave = gameEnv.GetCurrentWave().ToString();
 		kills = gameEnv.GetKills().ToString();
 		//Debug.Log (kills);
+
+		//if user hits escape menu is shown and game is paused
+		if (Input.GetKeyDown("escape")) 
+		{
+			//Console.log("esc");
+			//Debug.Log("esc");
+			menuVisible = !menuVisible;
+			if(menuVisible)
+			{
+				Time.timeScale = 0;
+			}
+			else
+			{
+				Time.timeScale = 1;
+			}
+		}
 	}
     /*
 	private void findGameEnvStuff()
@@ -66,7 +84,32 @@ public class GuiTest : MonoBehaviour {
 		//if (GUI.Button (new Rect (10,10,200,20), "Meet the flashing button")) {
 		//	print ("You clicked me!");
 		//}
-		
+
+		//Menu
+		var menuLocX = (Screen.width / 2) - 100;
+		var menuLocY = (Screen.height / 2) - 100;
+		if (menuVisible) {
+			GUI.Label(new Rect(menuLocX,menuLocY,200,200), "MENU", "box");
+			if(GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Continue"))
+			{
+				//Debug.Log("Continue");
+				menuVisible = false;
+				Time.timeScale = 1;
+			}
+			if(GUI.Button(new Rect(menuLocX,menuLocY+100,200,50),"Restart"))
+			{
+				//Debug.Log("Restart");
+				Application.LoadLevel(Application.loadedLevel);
+				menuVisible = false;
+				Time.timeScale = 1;
+			}
+			if(GUI.Button(new Rect(menuLocX,menuLocY+150,200,50),"Exit"))
+			{
+				//Debug.Log("Exit");
+				Application.Quit();
+			}
+		}
+
         var healthXoffset = 10;
         var healthYoffset = Screen.height - 30 - 10;
         var ammoXoffset = Screen.width - 201 - 10;
