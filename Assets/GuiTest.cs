@@ -137,10 +137,10 @@ public class GuiTest : MonoBehaviour {
 		GUI.Label(new Rect(healthXoffset, healthYoffset - 35, 50, 30), "Wave", "box");
 		GUI.Label(new Rect(healthXoffset, healthYoffset - 70, 50, 30), "Kills", "box");
 		
-		GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), wave, "box");
+		GUI.Label(new Rect(healthXoffset + 55, healthYoffset - 35, 50, 30), wave, "box"); //kill counter
 		//GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), kills, "box");
 		
-		GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 75, 50, 30), kills, "box");
+		GUI.Label(new Rect(healthXoffset + 55, healthYoffset - 70, 50, 30), kills, "box"); //wave counter
 	}
 
 	/*
