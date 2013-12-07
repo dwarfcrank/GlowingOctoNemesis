@@ -30,9 +30,10 @@ public class GameEnv : MonoBehaviour {
         var prefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
         var pos = location.position;
 
+
         if (prefab.name == "KamikazeBuzzer")
         {
-            pos += new Vector3(0.0f, 0.3f, 0.0f);
+            pos += new Vector3(0.0f, 1.0f, 0.0f);
         }
 
         var enemy = Instantiate(prefab, pos, location.rotation) as GameObject;

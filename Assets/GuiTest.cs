@@ -74,7 +74,7 @@ public class GuiTest : MonoBehaviour {
     */
     private int findAmmoCountForCurrentWeapon()
     {
-        return quiver.getCurrentWeaponAmmoCount();
+        return quiver.GetCurrentWeaponAmmoCount();
     }
 	void OnGUI () {
 

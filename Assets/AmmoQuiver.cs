@@ -4,14 +4,18 @@ using System.Collections;
 public class AmmoQuiver : MonoBehaviour
 {
     //asdfasdf
-    public int bulletCount = 500;
-    public int rocketCount = 10;
+    int bulletCount = 200;
+    int rocketCount = 10;
     public string curWeapon = "";
 
     WeaponSlot slot;
 
+	public void AddBulletsToQuiver(int count)
+	{
+		bulletCount += count;
+	}
 
-    public int getCurrentWeaponAmmoCount()
+    public int GetCurrentWeaponAmmoCount()
     {
         string weapon = slot.GetCurrentWeaponName();
 
@@ -27,6 +31,24 @@ public class AmmoQuiver : MonoBehaviour
 
         return -1;
     }
+
+
+	public void ShootCurrentWeapon()
+	{
+		string weapon = slot.GetCurrentWeaponName();
+
+		curWeapon = weapon;
+
+		switch (weapon)
+		{
+			case "RocketLauncher(Clone)":
+				rocketCount--;
+				break;
+			case "Weapon(Clone)":
+				bulletCount--;
+				break;
+		}
+	}
 
     // Use this for initialization
     void Start()
