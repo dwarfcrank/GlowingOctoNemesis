@@ -23,13 +23,6 @@ Material:
     m_Floats:
       data:
         first:
-<<<<<<< HEAD
-          name: _SelfIllumination
-        second: 1.20000005
-      data:
-        first:
-=======
->>>>>>> 35b4f2dc64edb38dc33cb2984b45c382699c8ea0
           name: _InvFade
         second: 1
       data:
