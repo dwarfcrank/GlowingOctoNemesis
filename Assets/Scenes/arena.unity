@@ -9797,6 +9797,48 @@ Prefab:
   m_RootGameObject: {fileID: 463301957}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &553512990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 553512992}
+  - 114: {fileID: 553512991}
+  m_Layer: 0
+  m_Name: Spawner1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &553512991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553512990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b48a68d0a0a0240aa73dedb4a9fbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - {fileID: 100002, guid: f9de32200f67a264097bdc0df713126a, type: 2}
+  numberOfPickups: 1
+  isStationaryPickup: 1
+--- !u!4 &553512992
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553512990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1309107849}
 --- !u!1001 &553826474
 Prefab:
   m_ObjectHideFlags: 0
@@ -11376,7 +11418,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f3792911093e64f19bfab22ad3fc6eec, type: 3}
   m_PrefabInternal: {fileID: 61406971}
   m_GameObject: {fileID: 666304753}
-  m_LocalRotation: {x: -.539470494, y: .507784128, z: .489081353, w: .460354716}
+  m_LocalRotation: {x: -.539470434, y: .507784069, z: .489081293, w: .460354656}
   m_LocalPosition: {x: 5.87556696, y: -.451377392, z: 22.699173}
   m_LocalScale: {x: .99999994, y: 1, z: .99999994}
   m_Children: []
@@ -21963,6 +22005,33 @@ Transform:
   m_LocalScale: {x: .569999993, y: .569999993, z: .569999993}
   m_Children: []
   m_Father: {fileID: 512565828}
+--- !u!1 &1309107848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1309107849}
+  m_Layer: 0
+  m_Name: PickupSpawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1309107849
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309107848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .864969254, y: 0, z: 3.7036562}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 553512992}
+  m_Father: {fileID: 0}
 --- !u!1001 &1309923547
 Prefab:
   m_ObjectHideFlags: 0
@@ -22808,7 +22877,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a0d34b5a7d90c4a079dfa0dee827af06, type: 3}
   m_PrefabInternal: {fileID: 68834777}
   m_GameObject: {fileID: 1368282025}
-  m_LocalRotation: {x: 0, y: .855342507, z: 0, w: -.518063068}
+  m_LocalRotation: {x: 0, y: .855342388, z: 0, w: -.518063009}
   m_LocalPosition: {x: 19.0534039, y: 5.46547794, z: .999966621}
   m_LocalScale: {x: .268933564, y: .380110085, z: .268933535}
   m_Children: []

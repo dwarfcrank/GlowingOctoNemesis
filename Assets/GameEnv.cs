@@ -5,6 +5,7 @@ public class GameEnv : MonoBehaviour {
 
     public Transform[] spawnPoints;
     public GameObject[] enemyPrefabs;
+	public Transform[] pickupSpawners;
 
     private int kills = 0;
     private int wave = 0;
@@ -72,6 +73,12 @@ public class GameEnv : MonoBehaviour {
     {
         wave++;
 
+		foreach (Transform t in pickupSpawners) 
+		{
+			SpawnPickup spawner = (SpawnPickup)t.GetComponent<SpawnPickup>();
+			spawner.SpawnAPickup();
+		}
+
         for (int i = 0; i < wave; i++)
         {
             foreach (Transform t in spawnPoints)
@@ -82,7 +89,7 @@ public class GameEnv : MonoBehaviour {
 
             yield return new WaitForSeconds(5.0f);
         }
-    }
+	}
 
     void OnEnemyDeath()
     {

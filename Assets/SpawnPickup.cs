@@ -5,6 +5,8 @@ public class SpawnPickup : MonoBehaviour {
 	
 	public GameObject[] pickups;
 	public int numberOfPickups;
+	public bool isStationaryPickup;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -22,5 +24,15 @@ public class SpawnPickup : MonoBehaviour {
 			Quaternion rot = new Quaternion(0,90,90,0);
 			Instantiate(pickups[pickup], pos, rot);
 		}
+	}
+
+	public void SpawnAPickup()
+	{
+		transform.DetachChildren();
+		//int pickup = Random.Range(0,numberOfPickups);
+		int pickup = 0;
+		Vector3 pos = new Vector3(transform.position.x, transform.position.y+1, transform.position.z);
+		Quaternion rot = new Quaternion(0,90,90,0);
+		Instantiate(pickups[pickup], pos, rot);
 	}
 }
