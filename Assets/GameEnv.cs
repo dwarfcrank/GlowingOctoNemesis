@@ -109,5 +109,22 @@ public class GameEnv : MonoBehaviour {
         {
             StartCoroutine("SpawnWave");
         }
+
+		// Testing gameover
+		//if(Input.GetKeyDown("g"))
+		//{
+		//	GameOver();
+		//}
+	}
+
+	void GameOver()
+	{
+		Time.timeScale = 0;
+
+		GuiTest g = (GuiTest)GameObject.Find ("HUD").GetComponent<GuiTest>();
+		g.GameOver ();
+
+		//Debug.Log ("gameover");
+
 	}
 }

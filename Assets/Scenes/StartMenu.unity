@@ -3751,6 +3751,7 @@ MonoBehaviour:
   - {fileID: 100002, guid: d384835283270934685ff0b22f61e032, type: 2}
   - {fileID: 100000, guid: 0c7864a5df5c7e5489480611f6b8e004, type: 2}
   numberOfPickups: 3
+  isStationaryPickup: 0
 --- !u!4 &1106611085
 Transform:
   m_ObjectHideFlags: 0
@@ -7499,8 +7500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6abf8dca3d337c4b894d44c03bbd421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCount: 100
-  rocketCount: 10
   curWeapon: 
 --- !u!114 &2081304057
 MonoBehaviour:

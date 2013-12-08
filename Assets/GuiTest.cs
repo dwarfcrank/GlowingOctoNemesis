@@ -15,9 +15,11 @@ public class GuiTest : MonoBehaviour {
 	private GameEnv gameEnv;
     private AmmoQuiver quiver;
 	private bool menuVisible;
+	private bool gameOver;
 
 	// Use this for initialization
 	void Start () {
+		gameOver = false;
 		menuVisible = false;
 		player = GameObject.FindGameObjectWithTag("Player");
 		health = player.GetComponent<Health>();
@@ -48,7 +50,7 @@ public class GuiTest : MonoBehaviour {
 		//Debug.Log (kills);
 
 		//if user hits escape menu is shown and game is paused
-		if (Input.GetKeyDown("escape")) 
+		if (Input.GetKeyDown("escape") && !gameOver) 
 		{
 			//Console.log("esc");
 			//Debug.Log("esc");
@@ -88,7 +90,7 @@ public class GuiTest : MonoBehaviour {
 		//Menu
 		var menuLocX = (Screen.width / 2) - 100;
 		var menuLocY = (Screen.height / 2) - 100;
-		if (menuVisible) {
+		if (menuVisible && !gameOver) {
 			GUI.Label(new Rect(menuLocX,menuLocY,200,200), "MENU", "box");
 			if(GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Continue"))
 			{
@@ -106,6 +108,27 @@ public class GuiTest : MonoBehaviour {
 			if(GUI.Button(new Rect(menuLocX,menuLocY+150,200,50),"Exit"))
 			{
 				//Debug.Log("Exit");
+				Application.Quit();
+			}
+		}
+
+		if (gameOver) 
+		{
+			GUI.Label(new Rect(menuLocX,menuLocY,200,200), "GAMEOVER", "box");
+			if(GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Go to Menu"))
+			{
+				Application.LoadLevel("startmenu");
+				menuVisible = false;
+				Time.timeScale = 1;
+			}
+			if(GUI.Button(new Rect(menuLocX,menuLocY+100,200,50),"Restart"))
+			{
+				Application.LoadLevel(Application.loadedLevel);
+				menuVisible = false;
+				Time.timeScale = 1;
+			}
+			if(GUI.Button(new Rect(menuLocX,menuLocY+150,200,50),"Exit"))
+			{
 				Application.Quit();
 			}
 		}
@@ -141,6 +164,12 @@ public class GuiTest : MonoBehaviour {
 		//GUI.Label(new Rect(healthXoffset + 30, healthYoffset - 35, 50, 30), kills, "box");
 		
 		GUI.Label(new Rect(healthXoffset + 55, healthYoffset - 70, 50, 30), kills, "box"); //wave counter
+	}
+
+	public void GameOver()
+	{
+		Time.timeScale = 0;
+		gameOver = true;
 	}
 
 	/*

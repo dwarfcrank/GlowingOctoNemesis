@@ -28786,6 +28786,7 @@ MonoBehaviour:
   - {fileID: 100052, guid: cb9fb046766ce4f308fafc4072dedf69, type: 2}
   - {fileID: 100000, guid: 90c861a70e39648e2961b81a538b3f5c, type: 2}
   - {fileID: 100000, guid: 61a8f246d5c514f18b5ff0a0f28693b0, type: 2}
+  pickupSpawners: []
 --- !u!4 &1682695306
 Transform:
   m_ObjectHideFlags: 0
@@ -32393,7 +32394,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1851322397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93778615f263c457a8417c60fa8aafc1, type: 3}
   m_Name: 
