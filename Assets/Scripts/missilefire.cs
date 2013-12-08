@@ -47,7 +47,7 @@ public class missilefire : MonoBehaviour {
 
         if (firing)
         {
-            if (Time.time > lastFireTime + muzzleFlashTime)
+            if (Time.time > lastFireTime + 1 / frequency)
             {
                 if (quiver.GetCurrentWeaponAmmoCount() > 0)
                 {
