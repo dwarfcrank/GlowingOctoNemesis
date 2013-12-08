@@ -16,9 +16,12 @@ public class GuiTest : MonoBehaviour {
     private AmmoQuiver quiver;
 	private bool menuVisible;
 	private bool gameOver;
+	private bool showCursor;
 
 	// Use this for initialization
 	void Start () {
+		showCursor = false;
+
 		gameOver = false;
 		menuVisible = false;
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -32,6 +35,7 @@ public class GuiTest : MonoBehaviour {
 		gameEnv = go.GetComponent<GameEnv>();
 
         quiver = GameObject.FindGameObjectWithTag("Player").GetComponent<AmmoQuiver>();
+
 
 	}
 	
@@ -47,15 +51,17 @@ public class GuiTest : MonoBehaviour {
 		//Debug.Log (gameEnv == null);
 		wave = gameEnv.GetCurrentWave().ToString();
 		kills = gameEnv.GetKills().ToString();
-		//Debug.Log (kills);
+
+		Screen.showCursor = menuVisible;
+
 
 		//if user hits escape menu is shown and game is paused
-		if (Input.GetKeyDown("escape") && !gameOver) 
+		if (Input.GetKeyDown("escape") && !gameOver)
 		{
 			//Console.log("esc");
 			//Debug.Log("esc");
 			menuVisible = !menuVisible;
-			if(menuVisible)
+			if (menuVisible)
 			{
 				Time.timeScale = 0;
 			}
@@ -94,26 +100,24 @@ public class GuiTest : MonoBehaviour {
 			GUI.Label(new Rect(menuLocX,menuLocY,200,200), "MENU", "box");
 			if(GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Continue"))
 			{
-				//Debug.Log("Continue");
 				menuVisible = false;
 				Time.timeScale = 1;
 			}
 			if(GUI.Button(new Rect(menuLocX,menuLocY+100,200,50),"Restart"))
 			{
-				//Debug.Log("Restart");
 				Application.LoadLevel(Application.loadedLevel);
 				menuVisible = false;
 				Time.timeScale = 1;
 			}
 			if(GUI.Button(new Rect(menuLocX,menuLocY+150,200,50),"Exit"))
 			{
-				//Debug.Log("Exit");
 				Application.Quit();
 			}
 		}
 
 		if (gameOver) 
 		{
+			showCursor = true;
 			GUI.Label(new Rect(menuLocX,menuLocY,200,200), "GAMEOVER", "box");
 			if(GUI.Button(new Rect(menuLocX,menuLocY+50,200,50),"Go to Menu"))
 			{

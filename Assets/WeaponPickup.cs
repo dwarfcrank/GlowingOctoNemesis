@@ -5,7 +5,7 @@ public class WeaponPickup : Pickup {
 
     public GameObject weapon;
 	public WeaponSlot.WeaponType WeaponNumber;
-    public int RocketCountInPickup = 10;
+    public int RocketCountInPickup = 5;
 
     // Use this for initialization
     protected override void Start()

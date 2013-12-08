@@ -9486,6 +9486,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400012, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
+      propertyPath: dieSignals.receivers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400064, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
       propertyPath: m_LocalPosition.x
       value: -21.7297192
@@ -9566,7 +9570,24 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -8.19228935
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 11400014, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
+      propertyPath: cursorPrefab
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400024, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
+=======
+    - target: {fileID: 11400012, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
+      propertyPath: dieSignals.receivers.Array.data[2].receiver
+      value: 
+      objectReference: {fileID: 1682695304}
+    - target: {fileID: 11400012, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
+      propertyPath: dieSignals.receivers.Array.data[2].action
+      value: OnPlayerDeath
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+>>>>>>> b78e6f087ba756d26220b964107332dabd5e148e
   m_ParentPrefab: {fileID: 100100000, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
   m_RootGameObject: {fileID: 838604607}
   m_IsPrefabParent: 0
@@ -11507,7 +11528,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f3792911093e64f19bfab22ad3fc6eec, type: 3}
   m_PrefabInternal: {fileID: 61406971}
   m_GameObject: {fileID: 666304753}
-  m_LocalRotation: {x: -.539470494, y: .507784128, z: .489081353, w: .460354716}
+  m_LocalRotation: {x: -.539470434, y: .507784069, z: .489081293, w: .460354656}
   m_LocalPosition: {x: 5.87556696, y: -.451377392, z: 22.699173}
   m_LocalScale: {x: .99999994, y: 1, z: .99999994}
   m_Children: []
@@ -22966,7 +22987,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: a0d34b5a7d90c4a079dfa0dee827af06, type: 3}
   m_PrefabInternal: {fileID: 68834777}
   m_GameObject: {fileID: 1368282025}
-  m_LocalRotation: {x: 0, y: .855342507, z: 0, w: -.518063068}
+  m_LocalRotation: {x: 0, y: .855342388, z: 0, w: -.518063009}
   m_LocalPosition: {x: 19.0534039, y: 5.46547794, z: .999966621}
   m_LocalScale: {x: .268933564, y: .380110085, z: .268933535}
   m_Children: []
@@ -32303,7 +32324,6 @@ GameObject:
   - 114: {fileID: 1851322401}
   - 114: {fileID: 1851322400}
   - 114: {fileID: 1851322399}
-  - 114: {fileID: 1851322409}
   - 114: {fileID: 1851322408}
   - 114: {fileID: 1851322410}
   m_Layer: 8
@@ -32422,6 +32442,9 @@ MonoBehaviour:
     - receiver: {fileID: 586632623}
       action: OnSignal
       delay: 0
+    - receiver: {fileID: 1682695304}
+      action: OnPlayerDeath
+      delay: 0
 --- !u!114 &1851322404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32436,7 +32459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motor: {fileID: 1851322405}
   character: {fileID: 1851322398}
-  cursorPrefab: {fileID: 100000, guid: 2dd326d33d99a491289f9402ad97bcc1, type: 2}
+  cursorPrefab: {fileID: 0}
   joystickPrefab: {fileID: 100000, guid: 76305b7830af34f949acf9d383cf2f74, type: 2}
   cameraSmoothing: .0500000007
   cameraPreview: 2
@@ -32497,19 +32520,6 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1851322397}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6abf8dca3d337c4b894d44c03bbd421, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curWeapon: 
---- !u!114 &1851322409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400024, guid: 6d43f2a1bc73eea4cbbab45b4a087646,
-    type: 2}
-  m_PrefabInternal: {fileID: 543176871}
   m_GameObject: {fileID: 1851322397}
   m_Enabled: 1
   m_EditorHideFlags: 0

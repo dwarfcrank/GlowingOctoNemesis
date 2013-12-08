@@ -357,10 +357,9 @@ MonoBehaviour:
   frequency: 1
   coneAngle: 1.5
   firing: 0
-  damagePerSecond: 20
+  damagePerSecond: 50
   forcePerSecond: 20
   hitSoundVolume: .5
-  bulletsLeft: 100
   muzzleFlashFront: {fileID: 100006}
   muzzleFlashTime: .300000012
 --- !u!120 &12000000

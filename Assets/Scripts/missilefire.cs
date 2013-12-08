@@ -8,10 +8,9 @@ public class missilefire : MonoBehaviour {
     public float frequency = 10;
     public float coneAngle = 1.5f;
     public bool firing = false;
-    public float damagePerSecond = 20.0f;
+    public float damagePerSecond = 50.0f;
     public float forcePerSecond = 20.0f;
     public float hitSoundVolume = 0.5f;
-    public int bulletsLeft = 100;
 
     public GameObject muzzleFlashFront;
     public float muzzleFlashTime = 0.3f;
@@ -24,7 +23,6 @@ public class missilefire : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-        //quiver = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent(AmmoQuiver);
         quiver = GameObject.FindGameObjectWithTag("Player").GetComponent<AmmoQuiver>();
 	}
 
