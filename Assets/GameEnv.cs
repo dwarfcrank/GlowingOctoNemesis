@@ -11,11 +11,16 @@ public class GameEnv : MonoBehaviour {
     private int wave = 0;
     private int numEnemiesThisWave = 0;
     private int numCurrentEnemies = 0;
+	private int lives = 3;
 
     public int GetKills()
     {
         return kills;
     }
+
+	public int GetLives() {
+		return lives;
+	}
 
     public int GetCurrentWave()
     {
@@ -101,6 +106,13 @@ public class GameEnv : MonoBehaviour {
     {
         numCurrentEnemies--;
     }
+
+	void OnPlayerDeath() {
+		lives--;
+		Debug.Log ("an death is you");
+		//string asd = this.GetLives.ToString();
+		//Debug.Log (asd);
+	}
 
 	// Update is called once per frame
 	void Update () 
