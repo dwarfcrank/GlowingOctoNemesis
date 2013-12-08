@@ -12,6 +12,7 @@ public class GuiTest : MonoBehaviour {
 	private float healthbarLength;
 	private string wave;
 	private string kills;
+	private int lives;
 	private GameEnv gameEnv;
     private AmmoQuiver quiver;
 	private bool menuVisible;
@@ -30,9 +31,12 @@ public class GuiTest : MonoBehaviour {
 		healthMax = health.maxHealth;
 		healthbarLength = healthNow/healthMax;
 
+
         //This and line 39 are the ways you should probably be able to get stuff. gtg lol ebin xD
 		GameObject go = GameObject.FindGameObjectWithTag("GameEnv");
 		gameEnv = go.GetComponent<GameEnv>();
+		lives = 3;
+
 
         quiver = GameObject.FindGameObjectWithTag("Player").GetComponent<AmmoQuiver>();
 
@@ -44,6 +48,7 @@ public class GuiTest : MonoBehaviour {
 		healthNow = (int)health.health;
 		//170 would fill the entire hp bar "box", I've used a smaller value here so things wouldn't overlap.
 		healthbarLength = (healthNow/healthMax)*166;
+		lives = gameEnv.GetLives ();
 
         //This should probably be in Start() ?
         //Anyway find a way to get a grip of the GameEnv class and it's functions.
@@ -143,8 +148,10 @@ public class GuiTest : MonoBehaviour {
         var ammoYoffset = healthYoffset;
         
 		//ammo etc
-		GUI.Label (new Rect (ammoXoffset, ammoYoffset - 30, 201, 30), "weapon", "box");
-		GUI.Label (new Rect(ammoXoffset, ammoYoffset, 50, 30), "AMMO ", "box");
+		GUI.Label (new Rect (ammoXoffset, ammoYoffset - 60, 150, 30), "Extra lives", "box");
+		GUI.Label (new Rect(ammoXoffset + 150, ammoYoffset - 60, 50, 30), lives.ToString(), "box"); //the actual value
+		GUI.Label (new Rect (ammoXoffset, ammoYoffset - 30, 201, 30), "Current Weapon", "box");
+		GUI.Label (new Rect(ammoXoffset, ammoYoffset, 50, 30), "Ammo ", "box");
 		GUI.Label (new Rect(ammoXoffset + 50, ammoYoffset, 150, 30), ammo.ToString(), "box");
         //GUI.Label (new Rect(ammoXoffset + 50, ammoYoffset, 150, 30), "999" + " / " + "999", "box");
 	
