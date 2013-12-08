@@ -81,16 +81,13 @@ public class AutoFire : MonoBehaviour {
                     hitInfo.rigidbody.AddForceAtPosition(force, hitInfo.point, ForceMode.Impulse);
                 }
 
-                // Ricochet sound
-                AudioClip sound = MaterialImpactManager.GetBulletHitSound(hitInfo.collider.sharedMaterial);
-                AudioSource.PlayClipAtPoint(sound, hitInfo.point, hitSoundVolume);
-
                 bullet.dist = hitInfo.distance;
             }
             else
             {
                 bullet.dist = 1000;
             }
+                Debug.Log("bullet distance: " + bullet.dist);
         }
         else
         {
@@ -102,6 +99,8 @@ public class AutoFire : MonoBehaviour {
     {
         if (Time.timeScale == 0)
             return;
+
+        Debug.Log("wat");
 
         if (quiver.GetCurrentWeaponAmmoCount() > 0)
         {
