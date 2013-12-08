@@ -5,6 +5,7 @@ public class WeaponPickup : Pickup {
 
     public GameObject weapon;
 	public WeaponSlot.WeaponType WeaponNumber;
+    public int RocketCountInPickup = 10;
 
     // Use this for initialization
     protected override void Start()
@@ -36,6 +37,12 @@ public class WeaponPickup : Pickup {
 
         weapslot.SetWeapon(weapon);
 		weapslot.addWeaponToInv((int)WeaponNumber, weapon);
+
+		if (WeaponNumber == WeaponSlot.WeaponType.ROCKET_LAUNCHER)
+		{
+			AmmoQuiver quiver = player.GetComponent<AmmoQuiver>();
+			quiver.AddRocketsToQuiver(RocketCountInPickup);
+		}
 		
         /*var weap = slot.transform.GetChild(0);
         var fire = weap.GetComponent<AutoFire>();
