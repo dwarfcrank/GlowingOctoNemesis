@@ -109,6 +109,10 @@ public class GameEnv : MonoBehaviour {
 
 	void OnPlayerDeath() {
 		lives--;
+		if (lives == 0) 
+		{
+			GameOver();
+		}
 		Debug.Log ("an death is you");
 		//string asd = this.GetLives.ToString();
 		//Debug.Log (asd);
@@ -121,5 +125,22 @@ public class GameEnv : MonoBehaviour {
         {
             StartCoroutine("SpawnWave");
         }
+
+		// Testing gameover
+		//if(Input.GetKeyDown("g"))
+		//{
+		//	GameOver();
+		//}
+	}
+
+	void GameOver()
+	{
+		Time.timeScale = 0;
+
+		GuiTest g = (GuiTest)GameObject.Find ("HUD").GetComponent<GuiTest>();
+		g.GameOver ();
+
+		//Debug.Log ("gameover");
+
 	}
 }
