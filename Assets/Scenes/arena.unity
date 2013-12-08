@@ -9570,17 +9570,6 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -8.19228935
       objectReference: {fileID: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-    - target: {fileID: 11400014, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
-      propertyPath: cursorPrefab
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11400024, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
-=======
-=======
->>>>>>> b78e6f087ba756d26220b964107332dabd5e148e
     - target: {fileID: 11400012, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
       propertyPath: dieSignals.receivers.Array.data[2].receiver
       value: 
@@ -9590,7 +9579,6 @@ Prefab:
       value: OnPlayerDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
->>>>>>> b78e6f087ba756d26220b964107332dabd5e148e
   m_ParentPrefab: {fileID: 100100000, guid: 6d43f2a1bc73eea4cbbab45b4a087646, type: 2}
   m_RootGameObject: {fileID: 838604607}
   m_IsPrefabParent: 0
