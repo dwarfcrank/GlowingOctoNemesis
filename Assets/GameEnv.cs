@@ -109,6 +109,7 @@ public class GameEnv : MonoBehaviour {
 
 	void OnPlayerDeath() {
 		lives--;
+		Debug.Log ("Lives: " + lives);
 		if (lives == 0) 
 		{
 			GameOver();
