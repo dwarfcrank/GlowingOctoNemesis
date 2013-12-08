@@ -13,7 +13,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 120: {fileID: 12000000}
   - 82: {fileID: 8200000}
-  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400010}
   m_Layer: 8
   m_Name: RocketLauncher
   m_TagString: Untagged
@@ -273,28 +273,6 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0952ed362b4d707469797910bde51bc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 100002, guid: 6b6ed0c7d67814717a4ec080aea5cdda, type: 2}
-  spawnPoint: {fileID: 400002}
-  frequency: 10
-  coneAngle: 1.5
-  firing: 0
-  damagePerSecond: 20
-  forcePerSecond: 20
-  hitSoundVolume: .5
-  bulletsLeft: 100
-  muzzleFlashFront: {fileID: 100006}
-  muzzleFlashTime: .300000012
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -363,6 +341,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdf562647f9346c492d3a7329db1756, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca068e5c429c9cf48b1a39c5ecd951af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 100000, guid: 8ec1111c23a5a5d468cf668697cab57b, type: 2}
+  spawnPoint: {fileID: 400002}
+  frequency: 1
+  coneAngle: 1.5
+  firing: 0
+  damagePerSecond: 20
+  forcePerSecond: 20
+  hitSoundVolume: .5
+  bulletsLeft: 100
+  muzzleFlashFront: {fileID: 100006}
+  muzzleFlashTime: .300000012
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1
