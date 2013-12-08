@@ -32304,8 +32304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6abf8dca3d337c4b894d44c03bbd421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCount: 100
-  rocketCount: 10
   curWeapon: 
 --- !u!114 &1851322409
 MonoBehaviour:
@@ -32319,8 +32317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6abf8dca3d337c4b894d44c03bbd421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletCount: 100
-  rocketCount: 10
   curWeapon: 
 --- !u!114 &1851322410
 MonoBehaviour:
