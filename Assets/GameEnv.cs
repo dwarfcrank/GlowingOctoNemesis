@@ -90,6 +90,11 @@ public class GameEnv : MonoBehaviour {
         numCurrentEnemies--;
     }
 
+    public void OnEnemyKillboxDeath()
+    {
+        numCurrentEnemies--;
+    }
+
 	// Update is called once per frame
 	void Update () 
     {
