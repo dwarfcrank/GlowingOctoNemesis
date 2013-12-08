@@ -7,7 +7,9 @@ public class WeaponSlot : MonoBehaviour {
     public GameObject defaultWeaponPrefab;
 
     private GameObject currentWeapon;
-	
+
+    private int currentWeaponIndex = 0;
+
 	GameObject[] weaps;
 	
 	public enum WeaponType {
@@ -48,16 +50,23 @@ public class WeaponSlot : MonoBehaviour {
 
     void Update()
     {
-		if (Input.GetKeyDown("1")) 
-		{
-    		switchWeapon((int)WeaponType.RIFLE);
-		}
+        var wheel = Input.GetAxis("Mouse ScrollWheel");
 
-		else if (Input.GetKeyDown("2")) 
-		{
-    		switchWeapon((int)WeaponType.ROCKET_LAUNCHER);
-		}
-		
+        if (wheel < 0)
+        {
+            currentWeaponIndex++;
+        }
+        else if (wheel > 0)
+        {
+            currentWeaponIndex--;
+        }
+        else
+        {
+            return;
+        }
+
+        currentWeaponIndex %= weaps.Length;
+        switchWeapon(currentWeaponIndex);
     }
 	
 	public void addWeaponToInv(int weapon, GameObject WeaponPrefab)
